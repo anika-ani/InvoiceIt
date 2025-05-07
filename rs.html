@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reminder Scheduler - InvoiceReminder</title>
+    <link rel="stylesheet" href="reminder-scheduler.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">When should we send reminders?</h1>
+        
+        <div class="rules-container">
+            <!-- Rule Card 1 -->
+            <div class="rule-card">
+                <div class="rule-content">
+                    <div class="rule-field">
+                        <div class="custom-select">
+                            <select class="timing-select">
+                                <option value="1day">1 day before due date</option>
+                                <option value="3day">3 days before due date</option>
+                                <option value="7day">7 days before due date</option>
+                                <option value="same">On due date</option>
+                                <option value="1after">1 day after due date</option>
+                                <option value="3after">3 days after due date</option>
+                            </select>
+                            <div class="select-arrow"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="rule-field">
+                        <div class="custom-select">
+                            <select class="template-select">
+                                <option value="friendly">Email template: Friendly</option>
+                                <option value="professional">Email template: Professional</option>
+                                <option value="urgent">Email template: Urgent</option>
+                                <option value="final">Email template: Final Notice</option>
+                            </select>
+                            <div class="select-arrow"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="delete-button" aria-label="Delete rule">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </div>
+            
+            <!-- Rule Card 2 -->
+            <div class="rule-card">
+                <div class="rule-content">
+                    <div class="rule-field">
+                        <div class="custom-select">
+                            <select class="timing-select">
+                                <option value="1day">1 day before due date</option>
+                                <option value="3day" selected>3 days before due date</option>
+                                <option value="7day">7 days before due date</option>
+                                <option value="same">On due date</option>
+                                <option value="1after">1 day after due date</option>
+                                <option value="3after">3 days after due date</option>
+                            </select>
+                            <div class="select-arrow"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="rule-field">
+                        <div class="custom-select">
+                            <select class="template-select">
+                                <option value="friendly">Email template: Friendly</option>
+                                <option value="professional" selected>Email template: Professional</option>
+                                <option value="urgent">Email template: Urgent</option>
+                                <option value="final">Email template: Final Notice</option>
+                            </select>
+                            <div class="select-arrow"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="delete-button" aria-label="Delete rule">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </div>
+        </div>
+        
+        <button class="add-rule-button">
+            <i class="fas fa-plus"></i> Add Rule
+        </button>
+        
+        <div class="divider"></div>
+        
+        <div class="test-section">
+            <h2>Test Your Reminders</h2>
+            <div class="test-input-group">
+                <label for="test-email">Send test to:</label>
+                <input type="email" id="test-email" placeholder="user@email.com">
+                <button class="button secondary-button">Test Email</button>
+            </div>
+        </div>
+        
+        <div class="action-buttons">
+            <button class="button primary-button">Go Live</button>
+        </div>
+    </div>
+</body>
+</html>
