@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Reminder Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>InvoiceReminder</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">
+                    <i class="fas fa-th-large"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Templates</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">JS</div>
+                    <div class="user-details">
+                        <p class="user-name">John Smith</p>
+                        <p class="user-role">Free Plan</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Dashboard</h1>
+            </header>
+            
+            <!-- Tab Navigation -->
+            <div class="tabs">
+                <button class="tab-button active">Upcoming (3)</button>
+                <button class="tab-button">Past Due (1)</button>
+            </div>
+            
+            <!-- Invoice Cards -->
+            <div class="invoice-cards">
+                <!-- Upcoming Tab Content -->
+                <div class="tab-content active">
+                    <!-- Invoice Card 1 -->
+                    <div class="invoice-card">
+                        <div class="invoice-info">
+                            <div class="client-name">Client A</div>
+                            <div class="invoice-amount">$100</div>
+                            <div class="due-date">Due May 10</div>
+                        </div>
+                        <div class="invoice-actions">
+                            <button class="remind-button">Remind</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Invoice Card 2 -->
+                    <div class="invoice-card">
+                        <div class="invoice-info">
+                            <div class="client-name">Client C</div>
+                            <div class="invoice-amount">$350</div>
+                            <div class="due-date">Due May 15</div>
+                        </div>
+                        <div class="invoice-actions">
+                            <button class="remind-button">Remind</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Invoice Card 3 -->
+                    <div class="invoice-card">
+                        <div class="invoice-info">
+                            <div class="client-name">Client D</div>
+                            <div class="invoice-amount">$750</div>
+                            <div class="due-date">Due May 20</div>
+                        </div>
+                        <div class="invoice-actions">
+                            <button class="remind-button">Remind</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Past Due Tab Content (Hidden by default) -->
+                <div class="tab-content">
+                    <!-- Invoice Card 4 -->
+                    <div class="invoice-card overdue">
+                        <div class="invoice-info">
+                            <div class="client-name">Client B</div>
+                            <div class="invoice-amount">$200</div>
+                            <div class="due-date">Due May 5 <span class="late-tag">(Late)</span></div>
+                        </div>
+                        <div class="invoice-actions">
+                            <button class="remind-button">Remind</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Activity Log -->
+            <div class="activity-log">
+                <h2>Activity Log</h2>
+                <ul class="activity-list">
+                    <li class="activity-item">
+                        <div class="activity-date">May 1</div>
+                        <div class="activity-description">
+                            Reminder sent to Client B 
+                            <span class="activity-status success">
+                                (Opened <i class="fas fa-check"></i>)
+                            </span>
+                        </div>
+                    </li>
+                    <li class="activity-item">
+                        <div class="activity-date">April 30</div>
+                        <div class="activity-description">
+                            Client A paid 
+                            <span class="activity-status success">
+                                (<i class="fas fa-check"></i>)
+                            </span>
+                        </div>
+                    </li>
+                    <li class="activity-item">
+                        <div class="activity-date">April 29</div>
+                        <div class="activity-description">
+                            Reminder sent to Client A
+                        </div>
+                    </li>
+                    <li class="activity-item">
+                        <div class="activity-date">April 28</div>
+                        <div class="activity-description">
+                            New invoice created for Client D
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Simple tab switching functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach((button, index) => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all tabs
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to current tab
+                    button.classList.add('active');
+                    tabContents[index].classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
